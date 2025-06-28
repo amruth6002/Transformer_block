@@ -1,12 +1,12 @@
 # Transformer Block Implementation
 
-This project implements a Transformer block using PyTorch. The block consists of the following components:
+This project implements a Transformer block from scratch, using PyTorch for tensor operations and certain pre-built layers. The block consists of the following components:
 
-- Layer Normalization: [`LayerNorm`](https://github.com/amruth6002/Transformer_Block/blob/main/Transformer_Block.ipynb) is applied before both the attention and feedforward sublayers.
-- Masked Multi-Head Attention: [`MultiHeadAttention`](https://github.com/amruth6002/Transformer_Block/blob/main/Transformer_Block.ipynb) mechanism to allow the model to focus on different parts of the input sequence. A mask is applied to prevent the model from attending to future tokens.
-- Dropout: Dropout layers (`nn.Dropout`) are used for regularization.
-- Shortcut Connections (Residual Connections): Residual connections are added after the attention and feedforward sublayers to ease optimization and improve performance.
-- Feed Forward Network: [`FeedForward`](https://github.com/amruth6002/Transformer_Block/blob/main/Transformer_Block.ipynb) network consisting of two linear layers with a GELU activation function in between.
+- **Layer Normalization**: A from-scratch implementation of [`LayerNorm`](https://github.com/amruth6002/Transformer_Block/blob/main/Transformer_Block.ipynb). It uses `nn.Parameter` for trainable scale and shift parameters.
+- **Masked Multi-Head Attention**: The [`MultiHeadAttention`](https://github.com/amruth6002/Transformer_Block/blob/main/Transformer_Block.ipynb) logic is implemented from scratch. It utilizes PyTorch's `nn.Linear` for the weight matrices and `nn.Dropout`.
+- **Dropout**: Applied via PyTorch's `nn.Dropout` for regularization within the attention mechanism and on the residual connections.
+- **Shortcut Connections (Residual Connections)**: Implemented by adding the input of a sublayer to its output.
+- **Feed Forward Network**: A [`FeedForward`](https://github.com/amruth6002/Transformer_Block/blob/main/Transformer_Block.ipynb) network that uses PyTorch's `nn.Linear` layers and a custom-implemented `GELU` activation function.
 
 ## Implementation Details
 
@@ -25,3 +25,4 @@ block = TransformerBlock(GPT_CONFIG_124M)
 output = block(x)
 print("Input Shape:", x.shape)
 print("Output shape:", output.shape)
+```
