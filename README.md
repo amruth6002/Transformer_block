@@ -13,6 +13,9 @@ This project implements a Transformer block from scratch, using PyTorch for tens
 - The configuration for the Transformer block is defined in the `GPT_CONFIG_124M` dictionary. This includes parameters such as embedding dimension, number of attention heads, and dropout rate.
 - The [`TransformerBlock`](https://github.com/amruth6002/Transformer_Block/blob/main/Transformer_Block.ipynb) class combines all the components into a single block.
 
+## Diagram
+![Transformer Block Diagram](image.png)
+
 ## Usage
 
 An example implementation is provided in the notebook to demonstrate how to use the `TransformerBlock`.
