@@ -3,7 +3,7 @@
 This project implements a Transformer block from scratch, using PyTorch for tensor operations and certain pre-built layers. The block consists of the following components:
 
 ## Diagram
-![Transformer Block Diagram](image.png)
+<img src="image.png" alt="Transformer Block Diagram" width="300"/>
 
 - **Layer Normalization**: A from-scratch implementation of [`LayerNorm`](https://github.com/amruth6002/Transformer_Block/blob/main/Transformer_Block.ipynb). It uses `nn.Parameter` for trainable scale and shift parameters.
 - **Masked Multi-Head Attention**: The [`MultiHeadAttention`](https://github.com/amruth6002/Transformer_Block/blob/main/Transformer_Block.ipynb) logic is implemented from scratch. It utilizes PyTorch's `nn.Linear` for the weight matrices and `nn.Dropout`.
